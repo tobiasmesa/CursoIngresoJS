@@ -32,8 +32,6 @@ function verificar()
     alert(`Usted es un ganador!!! y en solo ${contadorIntentos} intentos`);
   } else if (numeroIngresado < numeroSecreto) {
     alert("Falta"); 
-  }  else if (numeroIngresado == " ") {
-      alert("Ingrese un numero");
   } else {
     alert ("Se pasó");
   }
