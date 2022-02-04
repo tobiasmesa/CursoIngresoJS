@@ -7,14 +7,46 @@ y una de las cuatro operaciones básicas (suma, resta,
 se debe informar si el resultado es el correcto o no.
 */
 var respuesta;
+
+let numRandomUno = Math.round(Math.random() * 9 + 1);
+let numRandomDos = Math.round(Math.random() * 9 + 1);
+let numRandomOperador = Math.round(Math.random() * 3 + 1);
+let operador;
+let resultado = 0;
+
+switch (numRandomOperador) {
+    case 1: 
+        resultado = numRandomUno + numRandomDos; 
+        operador = "+";
+        break;
+    case 2: 
+        resultado = numRandomUno - numRandomDos; 
+        operador = "-";
+        break;
+    case 3: 
+        resultado = numRandomUno * numRandomDos; 
+        operador = "*"
+        break;
+    default:
+        resultado = numRandomUno / numRandomDos; 
+        operador = "/"
+        break;
+}
+
 function comenzar()
 {
-
-	
+    document.getElementById("txtIdPrimerNumero").value = numRandomUno;
+    document.getElementById("txtIdSegundoNumero").value = numRandomDos;
+    document.getElementById("txtIdOperador").value = operador;
 
 }//FIN DE LA FUNCIÓN
 function Responder()
 {
-	
+    let respuesta = parseInt(document.getElementById("txtIdRespuesta").value);
+	if(respuesta === resultado) {
+        alert("Correcto!");
+    } else {
+        alert("Incorrecto!");
+    }
 
 }//FIN DE LA FUNCIÓN
